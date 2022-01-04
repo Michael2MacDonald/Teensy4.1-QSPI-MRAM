@@ -428,7 +428,7 @@ static void flexspi2_write(uint32_t cmd, uint32_t addr, uint32_t data, uint32_t 
 	FLEXSPI2_IPCR1 = FLEXSPI_IPCR1_ISEQID(cmd) | FLEXSPI_IPCR1_IDATSZ(sz); // Set LUT index | Data Size (equates to 0x30004 or 196612 i think)
 	FLEXSPI2_IPCMD = FLEXSPI_IPCMD_TRG; // Trigger command
 	while (!(FLEXSPI2_INTR & FLEXSPI_INTR_IPCMDDONE)) ; // Wait until IP command is done
-	FLEXSPI2_INTR = FLEXSPI_INTR_IPCMDDONE | FLEXSPI_INTR_IPRXWA;
+	FLEXSPI2_INTR = FLEXSPI_INTR_IPCMDDONE;
 }
 
 FLASHMEM void configure_external_ram()
