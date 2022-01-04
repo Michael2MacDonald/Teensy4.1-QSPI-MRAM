@@ -26,4 +26,5 @@ The MRAM works very similarly to the standard compatible external PSRAM sold by 
 `teensy41_mram_memtest.cpp` is the teensy memory test sketch but modified to test the MRAM.
 `Counter_Test.cpp` Counts up and saves the value of the counter in MRAM. On startup it prints the counter value that is saved in MRAM and then resets it to 1 before counting again.
 
-**Compiling And Uploading:** You can use the included makefile to build, clean, and upload this project or you can copy the modified files into your project to use your own upload/compile method (ex. Arduino IDE).
+**Compiling And Uploading:**
+You can use the included makefile to build, clean, and upload this project or you can copy the modified files into your project to use your own upload/compile method (ex. Arduino IDE). You might have to update file paths in the makefile if you choose to go that route.
