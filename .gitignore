@@ -1,0 +1,11 @@
+.vscode
+
+# binaries/output/dependency files
+*.d
+*.o
+# *.hex
+*.a
+*.elf
+*.lst
+*.sym
+
