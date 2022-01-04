@@ -37,12 +37,6 @@ MCU_DEF = ARDUINO_TEENSY40
 #MCU_LD = imxrt1062_t41.ld
 #MCU_DEF = ARDUINO_TEENSY41
 
-# Use these lines for non-standard EXTRAM configurations
-# Note: Only for the Teensy 4.1
-#ERAMLEN = 8M # Size of memory accessable by the EXTRAM keyword (Use '*M', '*K', or '*')
-#ERAM2LEN = 8M # Size of memory accessable by the EXTRAM2 keyword
-#EXTRAM = ,--defsym=__ERAM_LENGTH=$(ERAMLEN),--defsym=__ERAM2_LENGTH=$(ERAM2LEN)
-
 # The name of your project (used to name the compiled .hex file)
 TARGET = main
 
@@ -136,7 +130,7 @@ CXXFLAGS = -std=gnu++14 -felide-constructors -fno-exceptions -fpermissive -fno-r
 CFLAGS =
 
 # linker options
-LDFLAGS = -Os -Wl,--gc-sections,--relax$(EXTRAM) $(SPECS) $(CPUOPTIONS) -T$(MCU_LD)
+LDFLAGS = -Os -Wl,--gc-sections,--relax $(SPECS) $(CPUOPTIONS) -T$(MCU_LD)
 
 # additional libraries to link
 LIBS = -larm_cortexM7lfsp_math -lm -lstdc++

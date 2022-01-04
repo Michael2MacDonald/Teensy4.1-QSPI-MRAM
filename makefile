@@ -39,7 +39,7 @@ FLAGS_LSP   :=
 FLAGS_CPP   := -std=gnu++14 -fno-exceptions -fpermissive -fno-rtti -fno-threadsafe-statics -felide-constructors -Wno-error=narrowing
 FLAGS_C     := 
 FLAGS_S     := -x assembler-with-cpp
-FLAGS_LD    := -Wl,--defsym=__ERAM_LENGTH=1K,--defsym=__ERAM2_LENGTH=1K,--print-memory-usage,--gc-sections,--relax -T$(CORE_BASE)/imxrt1062_t41.ld	# Teensy 4.1
+FLAGS_LD    := -Wl,--print-memory-usage,--gc-sections,--relax -T$(CORE_BASE)/imxrt1062_t41.ld	# Teensy 4.1
 
 LIBS        := -larm_cortexM7lfsp_math -lm -lstdc++
 
@@ -150,7 +150,7 @@ generateDirs    := $(foreach d, $(DIRECTORIES), $(shell if not exist "$d" mkdir 
 # Rules:
 #******************************************************************************
 
-.PHONY: directories all rebuild upload uploadTy uploadCLI clean cleanUser cleanCore
+.PHONY: directories all rebuild upload uploadCLI clean cleanUser cleanCore
 
 all:  $(TARGET_LST) $(TARGET_SYM) $(TARGET_HEX)
 

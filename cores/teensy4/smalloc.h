@@ -48,7 +48,6 @@ extern struct smalloc_pool smalloc_curr_pool;
 
 #ifdef ARDUINO_TEENSY41
 extern struct smalloc_pool extmem_smalloc_pool;
-extern struct smalloc_pool extmem2_smalloc_pool;
 #endif
 
 /* undefined behavior handler is called on typical malloc UB situations */
